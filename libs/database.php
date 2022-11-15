@@ -15,7 +15,6 @@ class Database{
         $this->password = constant('PASSWORD');
         $this->charset = constant('CHARSET');
     }
-
     function connect(){
         try{
             $connection = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;

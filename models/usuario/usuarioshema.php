@@ -9,5 +9,7 @@ class UsuarioSchema{
     public $documento;
     public $fechaNaci;
     public $estado;
+    public $telefono;
+    public $pass;
 }
 ?>

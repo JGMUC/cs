@@ -1,8 +1,8 @@
 <?php
 
-define('URL', 'http://localhost/cso/');
+define('URL', 'http://localhost/cs/');
 
-define('HOST', 'localhost');
+define('HOST', 'localhost:3310');
 define('DB', 'procsoftware');
 define('USER', 'root');
 define('PASSWORD', '');

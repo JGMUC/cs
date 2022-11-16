@@ -8,30 +8,23 @@ class Usuario extends Controller{
     }
 
     function render(){
-        $usuarios = $this->model->get();
-        $this->view->usuarios = $usuarios;
-        $roles=$this->model->getRoles();
-        $this->view->roles = $roles;
-        $this->view->render('usuarios/index');
+        if (isset($_SESSION['login'])){
+            $usuarios = $this->model->get();
+            $this->view->usuarios = $usuarios;
+            $roles=$this->model->getRoles();
+            $this->view->roles = $roles;
+            $this->view->render('usuarios/index');
+        }else{
+            header('location:login');
+        }
+       
     }
 
     function actualizarUsuario(){
         session_start();
-        // $matricula = $_POST['id'];
-        // $nombre    = $_POST['nombre'];
-        // $apellido  = $_POST['apellido'];
-
-        unset($_SESSION['id_verAlumno']);
-
         if($this->model->update(['matricula' => $matricula, 'nombre' => $nombre, 'apellido' => $apellido] )){
-            // actualizar alumno exito
-            // $alumno = new UsuarioSchema();
-            // $alumno->matricula = $matricula;
-            // $alumno->nombre = $nombre;
-            // $alumno->apellido = $apellido;
-            
-            // $this->view->alumno = $alumno;
-            // $this->view->mensaje = "Alumno actualizado correctamente";
+            // actualizar usuario exito
+          
         }else{
             // mensaje de error
             $this->view->mensaje = "No se pudo actualizar el alumno";
@@ -52,7 +45,6 @@ class Usuario extends Controller{
         if($this->model->crear(['rol' => $rol, 'codigo' => $codigo, 'nombres' => $nombres, 'apellido' => $apellido, 'correo' => $correo, 'documento' => $documento, 'fechaNaci' => $fechaNaci, 'telefono' => $telefono,'pass' => $pass,'estado' => $estado] )){
             $this->view->mensaje = "Usuario creado correctamente";
         }else{
-            // mensaje de error
             $this->view->mensaje = "No se pudo actualizar el alumno";
         }
         

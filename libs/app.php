@@ -1,5 +1,6 @@
 <?php
 require_once 'controllers/errores.php';
+require_once 'controllers/login.php';
 
 class App{
 
@@ -27,7 +28,6 @@ class App{
             
             // # elementos del arreglo
             $nparam = sizeof($url);
-
             if($nparam > 1){
                 if($nparam > 2){
                     $param = [];

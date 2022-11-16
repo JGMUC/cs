@@ -84,7 +84,6 @@ class usuarioModel extends Model{
                 'documento'=>	  $item['documento'],
                 'fechaNaci'=>	  $item['fechaNaci'],
                 'estado'=>	  $item['estado']
-
             ]);
             return true;
         }catch(PDOException $e){
@@ -93,6 +92,7 @@ class usuarioModel extends Model{
     }
     public function crear($item){
         $query = $this->db->connect()->prepare("insert into usuarios(usu_rol,usu_codigo,usu_nombres,usu_apellidos,usu_correo,usu_documento,usu_fecha_nacimiento,usu_estado,usu_telefono,usu_pass) values(:rol,:codigo,:nombres,:apellido,:correo,:documento,:fechaNaci ,:estado,:telefono,:pass)");
+        $hash=md5($item['pass']);
         $query->bindParam(':rol',$item['rol'],PDO::PARAM_INT);
         $query->bindParam(':codigo',$item['codigo'],PDO::PARAM_STR);
         $query->bindParam(':nombres',$item['nombres'],PDO::PARAM_STR);
@@ -102,7 +102,7 @@ class usuarioModel extends Model{
         $query->bindParam(':fechaNaci',$item['fechaNaci'],PDO::PARAM_STR);
         $query->bindParam(':telefono',$item['telefono'],PDO::PARAM_STR);
         $query->bindParam(':estado',$item['estado'],PDO::PARAM_STR);
-        $query->bindParam(':pass',$item['pass'],PDO::PARAM_STR);
+        $query->bindParam(':pass',$hash,PDO::PARAM_STR);
         try{
             $query->execute();
             return true;

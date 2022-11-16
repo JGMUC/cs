@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/default.css">
 </head>
 <body>
-    
-    <div id="header">
-        <ul>
-            <li><a href="">Inicio</a></li>
-            <li><a href="<?php echo constant('URL'); ?>usuario">Usuarios</a></li>
-            <li><a href="">Clientes</a></li>
-            <li><a href="">Consultas</a></li>
-            <li><a href="">Ayuda</a></li>
-            <li><a href="">Salir</a></li>
+    <div  id="header">
+    <nav class="nav">
+        <ul class="nav__list">
+            <li><a href="<?php echo constant('URL'); ?>main">Inicio</a></li>
+            <li>
+				<a href="#">Usuarios</a>
+				<ul>
+					<li><a href="<?php echo constant('URL'); ?>usuario">Listar y Crear</a></li>
+				</ul>
+			</li>
+            <li>
+                <a href="">Clientes</a>
+                <ul>
+					<li><a href="<?php echo constant('URL'); ?>usuario">Listar y Crear</a></li>
+                    <li><a href="<?php echo constant('URL'); ?>usuario">Consultas</a></li>
+				</ul>
+            </li>
+            <li><a href="<?php echo constant('URL'); ?>login/logOut">Salir</a></li>
         </ul>
+        </nav>
     </div>
 </body>
 </html>

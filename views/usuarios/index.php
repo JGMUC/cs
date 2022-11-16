@@ -49,7 +49,7 @@
 </table>
 <div class="contenedor-formularios" id="formP">
     <h2 class="center">Crear Nuevo Usuario</h2>    
-    <form action="<?php echo constant('URL'); ?>/usuario/crearUsuario" method="post" id="usuarios">            
+    <form action="<?php echo constant('URL'); ?>usuario/crearUsuario" method="post" id="usuarios">            
                   <div class="contenedor-select">
                         <label>
                             Rol <span class="req">*</span>

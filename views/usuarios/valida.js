@@ -13,22 +13,42 @@ const campos = {
 	correo: false,
     documento: false
 }
+let passw=''
+let passwr=''
 const validarFormulario = (e) => {
-    console.log(e.target.name)
     if (e.target.name==='pass'){
         if (!passwordValid.longitud.test(e.target.value) || !passwordValid.mayusculas.test(e.target.value) ||!passwordValid.minusculas.test(e.target.value)||!passwordValid.numeros.test(e.target.value)||!passwordValid.simbolos.test(e.target.value)){
             document.querySelector(`#grupo_pass .formulario__input-error`).classList.add('formulario__input-error-activo'); 
             campos[e.target.name] = false;
         }else{
             document.querySelector(`#grupo_pass .formulario__input-error`).classList.remove('formulario__input-error-activo')
+            passw=e.target.value
+            if (passwr){
+                if(passwr!==e.target.value){
+                    document.querySelector(`#grupo_rpass .formulario__input-error`).classList.add('formulario__input-error-activo'); 
+                }else{
+                    document.querySelector(`#grupo_rpass .formulario__input-error`).classList.remove('formulario__input-error-activo')
+                }
+            }
             campos[e.target.name] = true
         }
+       
     }else if (e.target.name==='correo'){
         if (!emailvalid.test(e.target.value)){
             document.querySelector(`#grupo_correo .formulario__input-error`).classList.add('formulario__input-error-activo'); 
             campos[e.target.name] = false;
         }else{
             document.querySelector(`#grupo_correo .formulario__input-error`).classList.remove('formulario__input-error-activo')
+            campos[e.target.name] = true
+        }
+        
+    }else if (e.target.name==='rpass'){
+        passwr=e.target.value
+        if (!(e.target.value==passw)){
+            document.querySelector(`#grupo_rpass .formulario__input-error`).classList.add('formulario__input-error-activo'); 
+            campos[e.target.name] = false;
+        }else{
+            document.querySelector(`#grupo_rpass .formulario__input-error`).classList.remove('formulario__input-error-activo')
             campos[e.target.name] = true
         }
     }

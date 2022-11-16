@@ -7,14 +7,10 @@ class usuarioModel extends Model{
     public function __construct(){
         parent::__construct();
     }
-
     public function get(){
         $items = [];
-
         try{
-
             $query = $this->db->connect()->query("SELECT usu_id,rol_nombre usu_rol,usu_codigo,usu_nombres,usu_apellidos,usu_correo,usu_documento,usu_fecha_nacimiento,usu_estado,usu_telefono FROM usuarios,roles where usu_rol=rol_id and usu_estado='A'");
-
             while($row = $query->fetch()){
                 $item = new UsuarioSchema();
                 $item->id = $row['usu_id'];

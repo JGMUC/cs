@@ -9,7 +9,6 @@
 </head>
 <body>
 <?php require 'views/header.php'; ?>
-
     <br>
     <h2 class="center">Lista Usuarios</h2>
     <table class="styled-table">
@@ -48,9 +47,6 @@
                         <?php } ?>  
     </tbody>
 </table>
-
-
-
 <div class="contenedor-formularios" id="formP">
     <h2 class="center">Crear Nuevo Usuario</h2>    
     <form action="<?php echo constant('URL'); ?>/usuario/crearUsuario" method="post" id="usuarios">            
@@ -122,11 +118,12 @@
                         <p class="formulario__input-error">La contraseña debe tener al menos un Número, una letra mayúscula, una letra minúscula, un caracter especial y una longitud mayor a 8.</p>
                     </div>
 
-                    <div class="contenedor-input">
+                    <div class="contenedor-input" id ="grupo_rpass">
                         <label>
                             Repetir Contraseña <span class="req">*</span>
                         </label>
-                        <input type="password" required>
+                        <input type="password" required name="rpass">
+                        <p class="formulario__input-error">Las contraseñas no coinciden.</p>
                     </div>
                     <div class="contenedor-select">
                         <label>

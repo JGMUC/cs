@@ -8,9 +8,7 @@ class App{
         $url = isset($_GET['url']) ? $_GET['url']: null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-        // cuando se ingresa sin definir controlador
-        echo(var_dump($url));
-        if(empty($url[0])){
+        if(sizeof($url)==0){
             $archivoController = 'controllers/main.php';
             require_once $archivoController;
             $controller = new Main();
@@ -19,7 +17,7 @@ class App{
             return false;
         }
         $archivoController = 'controllers/' . $url[0] . '.php';
-
+        echo($archivoController);
         if(file_exists($archivoController)){
             require_once $archivoController;
 

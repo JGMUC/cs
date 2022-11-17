@@ -13,7 +13,6 @@
     <div id="main">
         <img  src="https://www.pngkey.com/png/detail/258-2582687_symfony-php-mvc.png" alt="Symfony - Php Mvc@pngkey.com">
     </div>
-
     <?php require 'views/footer.php'; ?>
 </body>
 </html>

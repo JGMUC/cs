@@ -22,12 +22,12 @@ class Usuario extends Controller{
 
     function actualizarUsuario(){
         session_start();
-        if($this->model->update(['matricula' => $matricula, 'nombre' => $nombre, 'apellido' => $apellido] )){
+        if($this->model->update()){
             // actualizar usuario exito
           
         }else{
             // mensaje de error
-            $this->view->mensaje = "No se pudo actualizar el alumno";
+            $this->view->mensaje = "No se pudo actualizar el usuario";
         }
         $this->view->render('usuarios/index');
     }
@@ -45,22 +45,19 @@ class Usuario extends Controller{
         if($this->model->crear(['rol' => $rol, 'codigo' => $codigo, 'nombres' => $nombres, 'apellido' => $apellido, 'correo' => $correo, 'documento' => $documento, 'fechaNaci' => $fechaNaci, 'telefono' => $telefono,'pass' => $pass,'estado' => $estado] )){
             $this->view->mensaje = "Usuario creado correctamente";
         }else{
-            $this->view->mensaje = "No se pudo actualizar el alumno";
+            $this->view->mensaje = "No se pudo crear el usuario";
         }
         
         $this->view->render('usuarios/index');
     }
 
-    function eliminarAlumno($param = null){
-        $matricula = $param[0];
+    function eliminarUsuario($param = null){
+        $id = $param[0];
 
-        if($this->model->delete($matricula)){
-            //$this->view->mensaje = "Alumno eliminado correctamente";
-            $mensaje = "Alumno eliminado correctamente";
+        if($this->model->delete($id)){
+            $mensaje = "Usuario eliminado correctamente";
         }else{
-            // mensaje de error
-            //$this->view->mensaje = "No se pudo eliminar el alumno";
-            $mensaje = "No se pudo eliminar el alumno";
+            $mensaje = "No se pudo eliminar el usuario";
         }
         //$this->render();
         

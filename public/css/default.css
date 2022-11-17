@@ -342,3 +342,7 @@ input:focus {
     margin-right: auto;
     width: 80%;
   }
+  option { 
+    /* Whatever color  you want */
+    background-color: #0c151b;
+}

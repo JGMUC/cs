@@ -127,7 +127,7 @@
                     </div>
                     <div class="contenedor-select">
                         <label>
-                            Rol <span class="req">*</span>
+                            Estado <span class="req">*</span>
                         </label>
                         <select  required name="estado">
                              <option value="A">Activo</option>

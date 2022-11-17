@@ -21,7 +21,7 @@
             <li>
                 <a href="">Clientes</a>
                 <ul>
-					<li><a href="<?php echo constant('URL'); ?>usuario">Listar y Crear</a></li>
+					<li><a href="<?php echo constant('URL'); ?>cliente">Listar y Crear</a></li>
                     <li><a href="<?php echo constant('URL'); ?>usuario">Consultas</a></li>
 				</ul>
             </li>

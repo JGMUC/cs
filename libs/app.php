@@ -9,7 +9,7 @@ class App{
         $url = rtrim($url, '/');
         $url = explode('/', $url);
         // cuando se ingresa sin definir controlador
-        if(empty($url[0])){
+        if(sizeof($url)==0){
             $archivoController = 'controllers/main.php';
             require_once $archivoController;
             $controller = new Main();

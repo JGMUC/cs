@@ -1,9 +1,8 @@
 <?php
-define('URL', 'http://localhost/cs/');
-define('HOST', 'localhost:3310');
-define('DB', 'procsoftware');
-define('USER', 'root');
-define('PASSWORD', '');
+define('URL', 'http://localhost/');
+define('HOST', 'us-cdbr-east-06.cleardb.net');
+define('DB', 'heroku_9ce58dea0c0337f');
+define('USER', 'b4c59a630144c5');
+define('PASSWORD', 'e50b9e5d');
 define('CHARSET', 'utf8mb4');
-
 ?>

@@ -1,5 +1,5 @@
 <?php
-    require 'models/login/usuarioshema.php';
+    require 'usuarioshema.php';
     class loginModel extends Model{
         public function __construct(){
             parent::__construct();

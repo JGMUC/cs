@@ -15,7 +15,7 @@ class Login extends Controller{
         $usuario = $this->model->get($usuCodigo,$usuPass);
         if ($usuario->id){
             $_SESSION['login']=$usuCodigo;
-            header('location:/cs/main');
+            header('location:/main');
         }else{
             $this->view->mensaje='Usuario o contraseña inválidos';
             $this->view->render('login/index');
@@ -24,7 +24,7 @@ class Login extends Controller{
     function logOut(){  
         unset($_SESSION['login']);
         session_destroy();
-        header('location:/cs/login');           
+        header('location:/login');           
     }
 }
 ?>

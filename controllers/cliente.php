@@ -13,12 +13,7 @@ class Cliente extends Controller{
             $this->view->ciudades = $ciudades;
             $this->view->render('clientes/index');
         }else{
-            $clientes = $this->model->get();
-            $this->view->clientes = $clientes;
-            $ciudades=$this->model->getCiudades();
-            $this->view->ciudades = $ciudades;
-            $this->view->render('clientes/index');
-            //header('location:login');
+            header('location:login');
         }
     }
    

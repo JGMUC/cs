@@ -9,12 +9,11 @@ class App{
         $url = rtrim($url, '/');
         $url = explode('/', $url);
         if(sizeof($url)==0){
-            echo($archivoController);
-            // $archivoController = 'controllers/main.php';
-            // require_once $archivoController;
-            // $controller = new Main();
-            // $controller->loadModel('main');
-            // $controller->render();
+            $archivoController = 'controllers/main.php';
+            require_once $archivoController;
+            $controller = new Main();
+            $controller->loadModel('main');
+            $controller->render();
             return false;
         }
         $archivoController = 'controllers/' . $url[0] . '.php';

@@ -34,7 +34,6 @@ class clienteModel extends Model{
             return [];
         }
     }
-
     public function crear($item){
         $query = $this->db->connect()->prepare("INSERT INTO clientes (cli_razon_social, cli_identificacion, cli_representante_legal, cli_direccion, cli_ciu_id, cli_correo, cli_estado) VALUES (:razon,:nit,:rpl,:direccion,:ciud,:correo,:estado)");
         $query->bindParam(':razon',$item['razon'],PDO::PARAM_STR);
@@ -52,7 +51,6 @@ class clienteModel extends Model{
             return false;
         }
     }
-
     public function delete($id){
         $query = $this->db->connect()->prepare("DELETE FROM clientes WHERE cli_id = :id");
         try{
@@ -65,5 +63,4 @@ class clienteModel extends Model{
         }
     }
 }
-
 ?>

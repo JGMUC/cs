@@ -15,16 +15,26 @@
             <li>
 				<a href="#">Usuarios</a>
 				<ul>
-					<li><a href="<?php echo constant('URL'); ?>usuario">Listar y Crear</a></li>
+					<li><a href="<?php echo constant('URL'); ?>usuario">Crear</a></li>
+                    
 				</ul>
 			</li>
             <li>
                 <a href="">Clientes</a>
                 <ul>
-					<li><a href="<?php echo constant('URL'); ?>cliente">Listar y Crear</a></li>
-                    <li><a href="<?php echo constant('URL'); ?>usuario">Consultas</a></li>
+					<li><a href="<?php echo constant('URL'); ?>cliente">Crear</a></li>
+                    
 				</ul>
             </li>
+            <li>
+                <a href="">Consultas</a>
+                <ul>
+                <li><a href="<?php echo constant('URL'); ?>consultausuarios">Lista Usuarios</a></li>
+                <li><a href="<?php echo constant('URL'); ?>consultaclientes">Lista Clientes</a></li>
+    
+				</ul>
+            </li>
+
             <li><a href="<?php echo constant('URL'); ?>login/logOut">Salir</a></li>
         </ul>
         </nav>

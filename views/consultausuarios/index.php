@@ -11,7 +11,7 @@
 <?php require 'views/header.php'; ?>
     <br>
     <h2 class="center">Lista Usuarios</h2>
-    <table class="styled-table">
+    <table class="styled-table" id="tab">
     <thead class="styled-table">
         <tr>
             <th>Id</th>
@@ -47,7 +47,18 @@
                         <?php } ?>  
     </tbody>
 </table>
-
+<input class="pdf" type="button" value="Create PDF" 
+          id="btPrint" onclick="exportPDF('tab')" />
+      <br><br>
+<script src="<?php echo constant('URL'); ?>/public/js/jspdf.min.js"></script>
+ <script src="<?php echo constant('URL'); ?>/public/js/jspdf.plugin.autotable.min.js"></script>
+<script>
+   function exportPDF(){
+      window.jsPDF = window.jspdf.jsPDF
+  var doc = new jsPDF('l', 'mm', [297, 210]);
+  doc.autoTable({ html: '#tab' })
+  doc.save('usuarios.pdf')}
+</script>
 <?php require 'views/footer.php'; ?>
 <script src="<?php echo constant('URL'); ?>/views/usuarios/valida.js"></script>
 </body>

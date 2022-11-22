@@ -30,6 +30,13 @@ body{
 .imgfooter{
     padding: 10px;
 }
+.pdf{
+    background-color: #009879;
+    color:whitesmoke;
+    width: 120px;
+    float: right;
+    margin-right: 100px;
+}
 .contenedor-formularios {
     background: rgba(19, 35, 47, 0.9);
     padding: 40px;

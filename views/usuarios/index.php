@@ -10,43 +10,6 @@
 <body>
 <?php require 'views/header.php'; ?>
     <br>
-    <h2 class="center">Lista Usuarios</h2>
-    <table class="styled-table">
-    <thead class="styled-table">
-        <tr>
-            <th>Id</th>
-            <th>Usuario</th>
-            <th>Rol</th>
-            <th>Documento</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
-            <th>Fecha Nacimiento</th>
-            <th>Estado</th>
-        </tr>
-    </thead>
-    <tbody>    
-    <?php require_once 'models/usuario/usuarioshema.php';
-                              foreach ($this->usuarios as $row) {
-                                $usuario = new UsuarioSchema();
-                                $usuario = $row;
-                         ?> 
-                         <tr>
-                            <td><?php echo $usuario->id?></td>
-                            <td><?php echo $usuario->codigo?></td>
-                            <td><?php echo $usuario->rol?></td>
-                            <td><?php echo $usuario->documento?></td>
-                            <td><?php echo $usuario->nombres?></td>
-                            <td><?php echo $usuario->apellidos?></td>
-                            <td><?php echo $usuario->correo?></td>
-                            <td><?php echo $usuario->telefono?></td>
-                            <td><?php echo $usuario->fechaNaci?></td>
-                            <td><?php echo $usuario->estado?></td>
-                        </tr>
-                        <?php } ?>  
-    </tbody>
-</table>
 <div class="contenedor-formularios" id="formP">
     <h2 class="center">Crear Nuevo Usuario</h2>    
     <form action="<?php echo constant('URL'); ?>usuario/crearUsuario" method="post" id="usuarios">            

@@ -1,5 +1,5 @@
 <?php
-define('URL', 'http://localhost/');
+define('URL', 'https://cssoftware.herokuapp.com/');
 define('HOST', 'us-cdbr-east-06.cleardb.net');
 define('DB', 'heroku_9ce58dea0c0337f');
 define('USER', 'b4c59a630144c5');

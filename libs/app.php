@@ -19,7 +19,6 @@ class App{
         $archivoController = 'controllers/' . $url[0] . '.php';
         if(file_exists($archivoController)){
             require_once $archivoController;
-
             // inicializar controlador
             $controller = new $url[0];
             $controller->loadModel($url[0]);

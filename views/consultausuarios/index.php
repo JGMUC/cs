@@ -10,7 +10,7 @@
 <body>
 <?php require 'views/header.php'; ?>
     <br>
-    <h2 class="center">Lista Usuarios</h2>
+    <h2 class="center">Lista Usuarios PRUEBA DESPLIEGUE AUTOMATICO</h2>
     <table class="styled-table" id="tab">
     <thead class="styled-table">
         <tr>
